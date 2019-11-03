@@ -11,6 +11,77 @@
 
 /* global variable for text color; syntax for use in css is var(--textColor*/
 :root {
-    --textColor: black;
+    --textColor: #454545;
 }
 
+body {
+    font-family: var(--font);
+}
+
+#header {
+    background-color: #fcebe1;
+    color: var(--textColor);
+    margin-bottom: 0px;
+}
+
+#mapid { 
+    height: 500px;
+}
+
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.footer {
+    background: #303140;
+    color: #f8f9fa;   
+}
+
+.main {
+  text-align: left;
+  background: none;
+}
+
+.aside-1 {
+  background: #f8f9fa;
+}
+
+.aside-2 {
+  background: #f8f9fa;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+/*------------------------------------------
+
+*Style resources*
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
+
+Color Palette
+Dark blue: #303140
+Medium blue: #49556f
+Dark brown: #454545
+Pink: #fcebe1
+lavender: #acacde
+
+*/------------------------------------------

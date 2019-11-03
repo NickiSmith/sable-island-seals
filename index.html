@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>🌸 </title>
-
-		<!--put your external stylesheet links here-->
-		<link rel="stylesheet" href="css/style.css">
-		<!--[if IE<9]>
-			<link rel="stylesheet" href="css/style.ie.css">
-		<![endif]-->
+		<title>Sable Island Seals</title>
+        
         <!--   Google font API (update to chosen font)     -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+		<!--put your external stylesheet links here-->
+        
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        
+        <!--   Leaflet CSS     -->
+       <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+        
+        <!--   main style sheet     -->
+		<link rel="stylesheet" href="css/style.css">
+		
+        <!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
         
 	</head>
 
 	<body>
 		<!--put your initial page content here-->
+        <div id="header" class="jumbotron">
+            <h1><strong>Sable Island Seals</strong></h1>
+            <p>This is some example text using Bootstrap's Jumbotron header. I'm responsive!</p>
+        </div>
 
-		<!--you can also use this space for internal scripts or stylesheets;
-		place these within <script> or <style> tags-->
-
-		<!--put your external script links here-->
+        <!--   this is our map div!     -->
+        <div class="wrapper">
+        <article class="main">
+                 <div id="mapid"></div></article>
+            <aside class="aside aside-1">Some kind of content lives here</aside>
+            <aside class="aside aside-2">Well hello, handsome. I'm a placeholder.<img src="img/seal.jpg" width="200"></aside>
+            <footer class="footer">Created by Laura Smith and Nicki Smith<br>Data sources | source 1, source 2</footer>
+        </div>
+        
+        <!--put your external script links here-->
+        
+        <!--    Leaflet JS     -->
+        <script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
+        
+        <!--   main js file     -->
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
