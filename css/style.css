@@ -1,0 +1,16 @@
+/*  Style sheet for
+    Laura Smith and Nicki Smith
+    GEOG 575 Fall 2019
+    Final Project - Sable Island Seals
+*/
+
+/* global variable for font; syntax for use in css is var(--font);*/
+:root {
+    --font: 'Open Sans Condensed', sans-serif;
+}
+
+/* global variable for text color; syntax for use in css is var(--textColor*/
+:root {
+    --textColor: black;
+}
+
