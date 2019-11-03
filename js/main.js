@@ -16,12 +16,13 @@ var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyage
 var mymap = L.map('mapid', {
     center: [43.929898, -59.906358],
     zoom: 13,
-    layers: [stylized, imagery]
+    layers: [imagery, stylized]
 });
 
 var basemaps = {
-    "Stylized": stylized,
-    "Imagery": imagery
+    "Imagery": imagery,
+    "Stylized": stylized
+    
 };
 
 L.control.layers(basemaps).addTo(mymap);

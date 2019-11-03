@@ -22,13 +22,22 @@ body {
     background-color: #fcebe1;
     color: var(--textColor);
     margin-bottom: 0px;
+    padding-left: 10px;
 }
 
 #mapid { 
     height: 500px;
 }
 
+#sealPic1 {
+    border-radius: 10px;
+}
 
+.caption {
+    font-size: 12px;
+}
+
+/* CSS from Flex */
 .wrapper {
   display: flex;  
   flex-flow: row wrap;
@@ -46,15 +55,18 @@ body {
     color: #f8f9fa;   
 }
 
+/* centered pane or to the left or right of single aside */
 .main {
   text-align: left;
   background: none;
 }
 
+/* places an aside on the left*/
 .aside-1 {
   background: #f8f9fa;
 }
 
+/* places an aside on the right */
 .aside-2 {
   background: #f8f9fa;
 }

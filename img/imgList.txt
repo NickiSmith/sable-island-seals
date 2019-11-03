@@ -1,0 +1,14 @@
+Image list with attributions
+
+greySeal1:
+Photo by Diana Parkhouse on Unsplash
+
+sealPup1:
+Photo by Diana Parkhouse on Unsplash
+
+mum&Pup1:
+Photo by Diana Parkhouse on Unsplash
+
+greySeal2:
+Photo by Brian Yurasits on Unsplash
+
