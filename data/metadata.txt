@@ -1,0 +1,18 @@
+THIS TEXT FILE CONTAINS METADATA AND CITATIONS FOR PROJECT DATA
+--------------------------------------------
+
+1) Grey seal data
+
+Movebank data repository with source data:
+https://www.datarepository.movebank.org/handle/10255/move.449
+
+Requested citations:
+
+When using this dataset, please cite the original article.
+
+Baker L, Flemming JEM, Jonsen ID, Lidgard DC, Iverson SJ, Bowen WD (2015) A novel approach to quantifying the spatiotemporal behavior of instrumented grey seals used to sample the environment. Movement Ecology 3(1):20. doi:10.1186/s40462-015-0047-4
+Additionally, please cite the Movebank data package:
+
+Lidgard DC, Bowen WD, Iverson SJ (2015) Data from: A novel approach to quantifying the spatiotemporal behavior of instrumented grey seals used to sample the environment. Movebank Data Repository. doi:10.5441/001/1.910p0c20
+
+-----------------------------------------------
