@@ -25,9 +25,12 @@ body {
     padding-left: 10px;
 }
 
+/* leaflet map */
 #mapid { 
     height: 500px;
 }
+
+/*--- image styling below this line ---*/
 
 #sealPic1 {
     border-radius: 10px;
@@ -37,7 +40,36 @@ body {
     font-size: 12px;
 }
 
-/* CSS from Flex */
+/*--- end of image styling ---*/
+
+
+
+/*--- locator map styling below this line ---*/
+
+/* locator div */
+#locator {
+  width: auto;
+  height: 250px;
+}
+
+/* locator map svg (inside locator div) */
+svg{
+    background: white;
+    border-radius: 10px;
+} 
+
+/* locator map paths*/
+.coasts {
+   fill: #efefef;
+   stroke: #454545;    
+   stroke-width: 1.5px;
+}
+
+/*--- end of locator styling ---*/
+
+
+/* -----Everything below this line is CSS from Flex----- */
+
 .wrapper {
   display: flex;  
   flex-flow: row wrap;
@@ -83,9 +115,12 @@ body {
   .footer  { order: 4; }
 }
 
-/*------------------------------------------
+/*--- end of Flex ---*/
 
-*Style resources*
+
+/*-----------------------------------------
+
+*Resources*
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
 
@@ -96,4 +131,4 @@ Dark brown: #454545
 Pink: #fcebe1
 lavender: #acacde
 
-*/------------------------------------------
+*/-----------------------------------------
