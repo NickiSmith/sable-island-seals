@@ -90,7 +90,7 @@ $.ajax("data/sealTrack.geojson", {
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("data/test.geojson", function(error, collection) {
+d3.json("data/newSeal.geojson", function(error, collection) {
   if (error) throw error;
     function projectPoint(x, y) {
         var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
@@ -128,30 +128,28 @@ d3.json("data/test.geojson", function(error, collection) {
 //--------------- line animation -----------------------
    
 
-    
+    //call function to animate line on load
     animateLine();
 
- function animateLine() {
-    //Initially set the lines to not show	
-    //d3.selectAll("path").style("opacity","0.5");
-     
-    // Determine the total length of the line 
-    var totalLength =   d3.select("path").node().getTotalLength();
-	//console.log(totalLength);			
+    function animateLine() {
+        // Determine the total length of the line 
+        var totalLength =   d3.select("path").node().getTotalLength();
+        //console.log(totalLength);			
     
-    d3.selectAll("path")
-    // Set the line pattern to be an long line  followed by an equally long gap
-        .attr("stroke-dasharray", totalLength + " " + totalLength)
-    // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
-        .attr("stroke-dashoffset", totalLength)
-    // Then the following lines transition the line so that the gap is hidden...
-        .transition()
-        .duration(5000)
-    //    .ease("quad") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
-        .attr("stroke-dashoffset", 0);
+        d3.selectAll("path")
+        // Set the line pattern to be an long line  followed by an equally long gap
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+        // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+            .attr("stroke-dashoffset", totalLength)
+        // Then the following lines transition the line so that the gap is hidden...
+            .transition()
+            .duration(5000)
+        //    .ease("quad") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
+            .attr("stroke-dashoffset", 0);
      
  }
-    
+    //re-start the animation on click
+    //right now this is tied to a button, but it could be placed on the map?
     d3.select("#animate").on("click", function(d, i) {
         // Determine the total length of the line 
         var totalLength =   d3.select("path").node().getTotalLength();
