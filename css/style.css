@@ -71,10 +71,6 @@ svg{
 
 /* -----Everything below this line is CSS from Flex----- */
 
-   stroke: #b5bdce;    
-   stroke-width: 1.5px;
-}
-
 .label {
     width: 20px;
     height: 10px;
@@ -86,7 +82,8 @@ svg{
 .leaflet-zoom-hide {
     background-color: none;
     fill: none;
-    stroke: black;
+    stroke: #acacde;
+    stroke-width: 2.0px;
     opacity: 1.0;
 }
 

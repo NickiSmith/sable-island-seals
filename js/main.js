@@ -32,8 +32,9 @@ var basemaps = {
 
 L.control.layers(basemaps).addTo(mymap);
 
-
+//---------------------------------------
 //---------- d3 svg script below --------
+//---------------------------------------
 
 function myFunction() {
   var x = document.getElementById("myDIV");
@@ -44,7 +45,7 @@ function myFunction() {
   }
 }
 
-// loading data with leaflet--------------
+//-------loading data with leaflet ------------
 /*
 var geojsonFeature = {
   "type": "FeatureCollection",
@@ -89,16 +90,17 @@ $.ajax("data/sealTrack.geojson", {
         console.log(geoJsonLayer);
     }
 })
-*/ //end of loading data with leaflet
+*/ 
+//----- end of loading data with leaflet ----
 
-// loading seal path data with d3 ---------------
 
+
+//------- loading seal path data with d3 -----------
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
 d3.json("data/test.geojson", function(error, collection) {
   if (error) throw error;
-
     function projectPoint(x, y) {
         var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
         this.stream.point(point.x, point.y);
@@ -131,13 +133,32 @@ d3.json("data/test.geojson", function(error, collection) {
         feature.attr("d", path);
     }
     
+
+//--------------- line animation -----------------------    
+    // Determine the total length of the line 
+    var totalLength =   d3.select("path").node().getTotalLength();
+	//console.log(totalLength);			
+    
+    d3.selectAll("path")
+    // Set the line pattern to be an long line  followed by an equally long gap
+        .attr("stroke-dasharray", totalLength + " " + totalLength)
+    // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+        .attr("stroke-dashoffset", totalLength)
+    // Then the following lines transition the line so that the gap is hidden...
+        .transition()
+        .duration(5000)
+    //    .ease("quad") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
+        .attr("stroke-dashoffset", 0);
+    
 }); 
+//end of line animation --------------------------
 
 //end of loading seal path data with d3 ----------
 
 
-
+//--------------------------------------------
 //---------- locator map script below --------
+//--------------------------------------------
 
 //begin script when window loads
 window.onload = setMap();
@@ -238,12 +259,19 @@ window.onload = setMap();
 
 
 
-/*--- Resources ----------------
+
+
+//------------------------------------------------------
+/*------------------- Resources ------------------------
+//------------------------------------------------------
 
 https://gis.stackexchange.com/questions/34769/how-can-i-render-latitude-longitude-coordinates-on-a-map-with-d3
 
 Getting svg path to resize on zoom in leaflet/d3
 https://github.com/Leaflet/Leaflet/issues/5016
+
+Animating the line
+http://bl.ocks.org/fryford/2925ecf70ac9d9b51031
 
 */
 
