@@ -34,6 +34,111 @@ L.control.layers(basemaps).addTo(mymap);
 
 
 //---------- d3 svg script below --------
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+// loading data with leaflet--------------
+/*
+var geojsonFeature = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -59.86724853515625,
+            44.010595521219145
+          ],
+          [
+            -59.898834228515625,
+            43.858296779161826
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+var myStyle = {
+    "color": "#ff7800",
+	"weight": 5,
+	"opacity": 0.15,
+    "fillOpacity": 0.15,
+    "fill": "#ff7800"
+    //"background-color": "blue"
+    
+};
+
+//L.geoJSON(geojsonFeature, {style: myStyle}).addTo(mymap);
+
+//load seal tracking data
+$.ajax("data/sealTrack.geojson", {
+    dataType: "json",
+    success: function (response) {
+        geoJsonLayer = L.geoJSON(response, {style: myStyle}).addTo(mymap);
+        console.log(geoJsonLayer);
+    }
+})
+*/ //end of loading data with leaflet
+
+// loading seal path data with d3 ---------------
+
+var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
+    g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
+
+d3.json("data/test.geojson", function(error, collection) {
+  if (error) throw error;
+
+    function projectPoint(x, y) {
+        var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
+        this.stream.point(point.x, point.y);
+    }
+    
+    var transform = d3.geoTransform({point:    projectPoint}),
+        path = d3.geoPath().projection(transform);
+    
+    var feature = g.selectAll("path")
+    .data(collection.features)
+    .enter().append("path");
+    
+    mymap.on("moveend", reset);
+    reset();
+    
+    function reset(){  
+      var bounds = path.bounds(collection),
+          topLeft = bounds[0],
+          bottomRight = bounds[1];
+    
+      svgOver .attr("width", bottomRight[0] - topLeft[0])
+          .attr("height", bottomRight[1] - topLeft[1])
+          .style("left", topLeft[0] + "px")
+          .style("top", topLeft[1] + "px")
+          .style("background", "none")
+          .style("opacity", "1");
+
+      g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+    
+        feature.attr("d", path);
+    }
+    
+}); 
+
+//end of loading seal path data with d3 ----------
+
+
+
+//---------- locator map script below --------
+
 //begin script when window loads
 window.onload = setMap();
 
@@ -87,7 +192,8 @@ window.onload = setMap();
             var point = [-59.914991, 43.926013]
             
             //create label for point
-            //var label = "Sable Island"
+            var label = "<p>"+ "Sable Island" + "</p>"
+
             
             //add Sable Island marker to svg
             locatorMap.selectAll("circles.points")
@@ -97,10 +203,16 @@ window.onload = setMap();
                 .attr("r",5)
                 .attr("transform", function(d) {return "translate(" + projection(point) + ")";})
                 .attr("r", "3px")
-                .attr("fill", "#acacde")
+                .attr("fill", "#49556f")
                 .attr("stroke", "#49556f");
-            
+
+/* adding label experimentation -------------
             //add text label for point
+            //    .attr("r", "5px")
+              //  .attr("fill", "#303140")
+                //.attr("stroke", "#49556f");
+            
+            //add text label for point (still not working)
             locatorMap.selectAll("text")
             .data(point)
             .enter()
@@ -113,7 +225,25 @@ window.onload = setMap();
                  .attr("font-size", "20px")
                  .attr("fill", "black");
 
+            .attr("class", "label")
+            //.attr("height", "10px")
+            .attr("transform", function(d) {return "translate(" + projection(point) + ")";})
+            .html(label);
+            
+            */
+            
         } //end of the callback() function
     } //end of setMap()
-//---------- end of d3 svg script ----------
+//-------- end of locator map script -------
+
+
+
+/*--- Resources ----------------
+
+https://gis.stackexchange.com/questions/34769/how-can-i-render-latitude-longitude-coordinates-on-a-map-with-d3
+
+Getting svg path to resize on zoom in leaflet/d3
+https://github.com/Leaflet/Leaflet/issues/5016
+
+*/
 

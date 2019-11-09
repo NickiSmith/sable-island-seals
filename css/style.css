@@ -30,6 +30,7 @@ body {
     height: 500px;
 }
 
+
 /*--- image styling below this line ---*/
 
 #sealPic1 {
@@ -61,14 +62,37 @@ svg{
 /* locator map paths*/
 .coasts {
    fill: #efefef;
-   stroke: #454545;    
-   stroke-width: 1.5px;
+   stroke: aliceblue;    
+   stroke-width: 2px;
 }
 
 /*--- end of locator styling ---*/
 
 
 /* -----Everything below this line is CSS from Flex----- */
+
+   stroke: #b5bdce;    
+   stroke-width: 1.5px;
+}
+
+.label {
+    width: 20px;
+    height: 10px;
+    fill: black;
+}
+
+/*--- end of locator styling ---*/
+
+.leaflet-zoom-hide {
+    background-color: none;
+    fill: none;
+    stroke: black;
+    opacity: 1.0;
+}
+
+
+/* -----Everything below this line is CSS from Flex----- */
+
 
 .wrapper {
   display: flex;  
@@ -87,7 +111,7 @@ svg{
     color: #f8f9fa;   
 }
 
-/* centered pane or to the left or right of single aside */
+/* centered pane or to the left or right if single aside */
 .main {
   text-align: left;
   background: none;
