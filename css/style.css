@@ -68,6 +68,15 @@ svg{
 
 /*--- end of locator styling ---*/
 
+/*---- animation button styling --*/
+#animate {
+    border-radius: 12px;
+    background-color: #49556f;
+    color: white;
+    padding: 12px 28px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
 
 /* -----Everything below this line is CSS from Flex----- */
 
