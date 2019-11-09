@@ -32,18 +32,6 @@ var basemaps = {
 
 L.control.layers(basemaps).addTo(mymap);
 
-//---------------------------------------
-//---------- d3 svg script below --------
-//---------------------------------------
-
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 //-------loading data with leaflet ------------
 /*
@@ -94,12 +82,15 @@ $.ajax("data/sealTrack.geojson", {
 //----- end of loading data with leaflet ----
 
 
+//---------------------------------------
+//---------- d3 svg script below --------
+//---------------------------------------
 
-//------- loading seal path data with d3 -----------
+
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("data/test.geojson", function(error, collection) {
+d3.json("data/seal.geojson", function(error, collection) {
   if (error) throw error;
     function projectPoint(x, y) {
         var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
@@ -153,7 +144,7 @@ d3.json("data/test.geojson", function(error, collection) {
 }); 
 //end of line animation --------------------------
 
-//end of loading seal path data with d3 ----------
+//-------- end of d3 svg script ----------
 
 
 //--------------------------------------------
@@ -261,9 +252,9 @@ window.onload = setMap();
 
 
 
-//------------------------------------------------------
-/*------------------- Resources ------------------------
-//------------------------------------------------------
+//-----------------------------------------------
+/*---------------- Resources --------------------
+//-----------------------------------------------
 
 https://gis.stackexchange.com/questions/34769/how-can-i-render-latitude-longitude-coordinates-on-a-map-with-d3
 
