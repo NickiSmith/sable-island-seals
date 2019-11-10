@@ -90,16 +90,25 @@ $.ajax("data/sealTrack.geojson", {
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("data/newSeal.geojson", function(error, collection) {
-  if (error) throw error;
+var data = "data/sealS0751.geojson"
+
+//create empty groups THIS IS A TEST
+//var g1 = svgOver.append("g"); var g2 = svgOver.append("g");
+
+var loadData = d3.json(data, function(error, collection) {
+    if (error) throw error;
     function projectPoint(x, y) {
         var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
         this.stream.point(point.x, point.y);
+        //console.log(point);
+        
     }
     
-    var transform = d3.geoTransform({point:    projectPoint}),
+    var transform = d3.geoTransform({point: projectPoint}),
         path = d3.geoPath().projection(transform);
     
+    
+    // create path
     var feature = g.selectAll("path")
     .data(collection.features)
     .enter().append("path");
@@ -112,18 +121,20 @@ d3.json("data/newSeal.geojson", function(error, collection) {
           topLeft = bounds[0],
           bottomRight = bounds[1];
     
-      svgOver .attr("width", bottomRight[0] - topLeft[0])
+      svgOver
+          .attr("width", bottomRight[0] - topLeft[0])
           .attr("height", bottomRight[1] - topLeft[1])
           .style("left", topLeft[0] + "px")
           .style("top", topLeft[1] + "px")
           .style("background", "none")
           .style("opacity", "1");
 
-      g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
-    
+      g
+          .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+        
         feature.attr("d", path);
-    }
-    
+    }    
+
 
 //--------------- line animation -----------------------
    
@@ -143,7 +154,7 @@ d3.json("data/newSeal.geojson", function(error, collection) {
             .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
             .transition()
-            .duration(5000)
+            .duration(10000)
         //    .ease("quad") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
             .attr("stroke-dashoffset", 0);
      
@@ -162,7 +173,7 @@ d3.json("data/newSeal.geojson", function(error, collection) {
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
         .transition()
-        .duration(5000)
+        .duration(10000)
         //    .ease("quad") //Try linear, quad,        bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
         .attr("stroke-dashoffset", 0);
     })
