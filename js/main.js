@@ -20,7 +20,7 @@ var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyage
 
 var mymap = L.map('mapid', {
     center: [43.929898, -59.906358],
-    zoom: 13,
+    zoom: 8,
     layers: [imagery, stylized]
 });
 
@@ -90,7 +90,7 @@ $.ajax("data/sealTrack.geojson", {
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
-var data = "data/sealS0751.geojson"
+var data = "data/sealF104.geojson"
 
 //create empty groups THIS IS A TEST
 //var g1 = svgOver.append("g"); var g2 = svgOver.append("g");
@@ -154,8 +154,8 @@ var loadData = d3.json(data, function(error, collection) {
             .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
             .transition()
-            .duration(10000)
-        //    .ease("quad") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
+            .duration(100000)
+            //.ease("linear") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
             .attr("stroke-dashoffset", 0);
      
  }
@@ -164,7 +164,7 @@ var loadData = d3.json(data, function(error, collection) {
     d3.select("#animate").on("click", function(d, i) {
         // Determine the total length of the line 
         var totalLength =   d3.select("path").node().getTotalLength();
-	   console.log(totalLength);			
+	   //console.log(totalLength);			
     
         d3.selectAll("path")
         // Set the line pattern to be an long line  followed by an equally long gap
@@ -173,7 +173,7 @@ var loadData = d3.json(data, function(error, collection) {
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
         .transition()
-        .duration(10000)
+        .duration(100000)
         //    .ease("quad") //Try linear, quad,        bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
         .attr("stroke-dashoffset", 0);
     })
@@ -303,6 +303,8 @@ https://github.com/Leaflet/Leaflet/issues/5016
 
 Animating the line
 http://bl.ocks.org/fryford/2925ecf70ac9d9b51031
+
+https://stackoverflow.com/questions/28682454/moving-a-circle-along-a-d3-path-animating-at-varying-speeds
 
 */
 
