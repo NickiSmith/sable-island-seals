@@ -16,18 +16,19 @@
 
 body {
     font-family: var(--font);
+    background-color: #f8f9fa;
 }
 
 #header {
-    background-color: #fcebe1;
-    color: var(--textColor);
+    background-color: #49556f;
+    color: snow;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
 /* leaflet map */
 #mapid { 
-    height: 500px;
+    height: 580px;
 }
 
 
@@ -70,12 +71,31 @@ svg{
 
 /*---- animation button styling --*/
 #animate {
-    border-radius: 12px;
-    background-color: #49556f;
-    color: white;
-    padding: 12px 28px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    border-radius: 50%;
+/*    text-align: center;*/
+/*    vertical-align: center;*/
+/*    display: table-cell;*/
+/*    background-color: none;*/
+/*    background-size: contain;*/
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+/*    color: white;*/
+    padding: 0 0;
+/*    font-size: 16px;*/
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    }
+
+#seal1 {
+    height:120px;
+    width: 120px;
+/*    position: relative;*/
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /* -----Everything below this line is CSS from Flex----- */
@@ -91,7 +111,7 @@ svg{
 .leaflet-zoom-hide {
     background-color: none;
     fill: none;
-    stroke: #acacde;
+    stroke: #CC9999;
     stroke-width: 1.0px;
     opacity: 1;
 }

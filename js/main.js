@@ -33,55 +33,6 @@ var basemaps = {
 L.control.layers(basemaps).addTo(mymap);
 
 
-//-------loading data with leaflet ------------
-/*
-var geojsonFeature = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -59.86724853515625,
-            44.010595521219145
-          ],
-          [
-            -59.898834228515625,
-            43.858296779161826
-          ]
-        ]
-      }
-    }
-  ]
-};
-
-var myStyle = {
-    "color": "#ff7800",
-	"weight": 5,
-	"opacity": 0.15,
-    "fillOpacity": 0.15,
-    "fill": "#ff7800"
-    //"background-color": "blue"
-    
-};
-
-//L.geoJSON(geojsonFeature, {style: myStyle}).addTo(mymap);
-
-//load seal tracking data
-$.ajax("data/sealTrack.geojson", {
-    dataType: "json",
-    success: function (response) {
-        geoJsonLayer = L.geoJSON(response, {style: myStyle}).addTo(mymap);
-        console.log(geoJsonLayer);
-    }
-})
-*/ 
-//----- end of loading data with leaflet ----
-
-
 //---------------------------------------
 //---------- d3 svg script below --------
 //---------------------------------------
@@ -91,9 +42,6 @@ var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "leaflet-zoom-hide");
 
 var data = "data/sealF104.geojson"
-
-//create empty groups THIS IS A TEST
-//var g1 = svgOver.append("g"); var g2 = svgOver.append("g");
 
 var loadData = d3.json(data, function(error, collection) {
     if (error) throw error;
@@ -155,7 +103,7 @@ var loadData = d3.json(data, function(error, collection) {
         // Then the following lines transition the line so that the gap is hidden...
             .transition()
             .duration(100000)
-            //.ease("linear") //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
+            .ease(d3.easeLinear) //Try linear, quad, bounce... see other examples here -   http://bl.ocks.org/hunzy/9929724
             .attr("stroke-dashoffset", 0);
      
  }
@@ -288,7 +236,8 @@ window.onload = setMap();
     } //end of setMap()
 //-------- end of locator map script -------
 
-
+    //Add button icons
+    $("#animate").html("<img id='seal1' src='img/seal1.svg'>");
 
 
 
