@@ -45,7 +45,6 @@ body {
 /*--- end of image styling ---*/
 
 
-
 /*--- locator map styling below this line ---*/
 
 /* locator div */
@@ -68,6 +67,24 @@ svg{
 }
 
 /*--- end of locator styling ---*/
+
+
+/* --- style seal paths ---*/
+.F104 {
+    stroke: #f2bfba;
+}
+.F532 {
+    stroke: #a0d6b1;
+}
+.K88 {
+    stroke: #efd3f5;
+}
+.S0749 {
+    stroke: #fff8b8;
+}
+.S0758 {
+    stroke: #ffd5ab;
+}
 
 /*---- animation button styling --*/
 .animate {
@@ -111,7 +128,7 @@ svg{
 
 /*--- end of locator styling ---*/
 
-.leaflet-zoom-hide {
+.pane {
     background-color: none;
     fill: none;
     stroke: #CC9999;
