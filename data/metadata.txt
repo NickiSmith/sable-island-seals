@@ -16,3 +16,10 @@ Additionally, please cite the Movebank data package:
 Lidgard DC, Bowen WD, Iverson SJ (2015) Data from: A novel approach to quantifying the spatiotemporal behavior of instrumented grey seals used to sample the environment. Movebank Data Repository. doi:10.5441/001/1.910p0c20
 
 -----------------------------------------------
+
+National Park Boundary Data
+https://open.canada.ca/data/en/dataset?organization=pc&res_format=SHP
+
+Organization Name:
+Government of Canada; Natural Resources Canada; Earth Sciences Sector; Canada Centre for Mapping and Earth Observation
+https://open.canada.ca/en/open-government-licence-canada

@@ -89,17 +89,11 @@ svg{
 /*---- animation button styling --*/
 .animate {
     border-radius: 50%;
-/*    text-align: center;*/
-/*    vertical-align: center;*/
-/*    display: table-cell;*/
     background-color: none;
-/*    background-size: contain;*/
     display: block;
-    height: 80px;
-    width: 80px;
-/*    color: white;*/
+/*    height: 80px;*/
+/*    width: 80px;*/
     padding: 0 0;
-/*    font-size: 16px;*/
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -108,17 +102,12 @@ svg{
 
     }
 
-#seal1 {
+.buttonSVG {
     height:80px;
     width: 80px;
-/*    position: relative;*/
-/*    padding: 0;*/
-/*    margin: auto;*/
     text-align: center;
     vertical-align: middle;
 }
-
-/* -----Everything below this line is CSS from Flex----- */
 
 .label {
     width: 20px;
@@ -128,10 +117,11 @@ svg{
 
 /*--- end of locator styling ---*/
 
+/* leaflet overlay pane */
 .pane {
     background-color: none;
     fill: none;
-    stroke: #CC9999;
+/*    stroke: #CC9999;*/
     stroke-width: 1.0px;
     opacity: 1;
 }

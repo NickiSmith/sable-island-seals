@@ -40,9 +40,12 @@ L.control.layers(basemaps).addTo(mymap);
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "pane");
 
+//load park boundary polygon
+var parkData="data/NPboundary.geojson"
+
 //load geojson seal data for seal paths
-var data="data/allSeals.geojson";
-var loadData = d3.json(data, function(error, collection) {
+var sealData="data/allSeals.geojson";
+var loadData = d3.json(sealData, function(error, collection) {
     if (error) throw error;
     function projectPoint(x, y) {
         var point = mymap.latLngToLayerPoint(new L.LatLng(y, x));
@@ -55,7 +58,6 @@ var loadData = d3.json(data, function(error, collection) {
     // create paths
     var feature = g.selectAll("path")
     .data(collection.features)
-    //.data(collection.features.filter(function(d) {return d.ID == "F532"}))
     .enter()
     .append("path")
     .attr("class", function(d){
@@ -324,11 +326,11 @@ window.onload = setMap();
 //------- Add button icons ---------//
 //----------------------------------//
 
-    $("#seal1").html("<img id='seal1' src='img/seal1.svg'>");
-    $("#seal2").html("<img id='seal1' src='img/seal2.svg'>");
-    $("#seal3").html("<img id='seal1' src='img/seal3.svg'>");
-    $("#seal4").html("<img id='seal1' src='img/seal4.svg'>");
-    $("#seal5").html("<img id='seal1' src='img/seal5.svg'>");
+    $("#seal1").html("<img class='buttonSVG' src='img/seal1.svg'>");
+    $("#seal2").html("<img class='buttonSVG' src='img/seal2.svg'>");
+    $("#seal3").html("<img class='buttonSVG' src='img/seal3.svg'>");
+    $("#seal4").html("<img class='buttonSVG' src='img/seal4.svg'>");
+    $("#seal5").html("<img class='buttonSVG' src='img/seal5.svg'>");
 
 //-----------------------------------------------
 /*---------------- Resources --------------------
