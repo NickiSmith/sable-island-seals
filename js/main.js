@@ -19,8 +19,8 @@ var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyage
 });
 
 var mymap = L.map('mapid', {
-    center: [43.929898, -59.906358],
-    zoom: 8,
+    center: [44.1, -60.5],
+    zoom: 8.5,
     layers: [imagery, stylized]
 });
 
@@ -109,7 +109,7 @@ var loadData = d3.json(data, function(error, collection) {
  }
     //re-start the animation on click
     //right now this is tied to a button, but it could be placed on the map?
-    d3.select("#animate").on("click", function(d, i) {
+    d3.select("#seal1").on("click", function(d, i) {
         // Determine the total length of the line 
         var totalLength =   d3.select("path").node().getTotalLength();
 	   //console.log(totalLength);			
@@ -237,7 +237,11 @@ window.onload = setMap();
 //-------- end of locator map script -------
 
     //Add button icons
-    $("#animate").html("<img id='seal1' src='img/seal1.svg'>");
+    $("#seal1").html("<img id='seal1' src='img/seal1.svg'>");
+    $("#seal2").html("<img id='seal1' src='img/seal2.svg'>");
+    $("#seal3").html("<img id='seal1' src='img/seal3.svg'>");
+    $("#seal4").html("<img id='seal1' src='img/seal4.svg'>");
+    $("#seal5").html("<img id='seal1' src='img/seal5.svg'>");
 
 
 
