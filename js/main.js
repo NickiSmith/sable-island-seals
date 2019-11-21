@@ -322,6 +322,31 @@ window.onload = setMap();
     } //end of setMap()
 //-------- end of locator map script -------//
 
+//--------- locator tool --------------//
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+
+//---------end locator tool -----------//
+
+
+
+// -------- add logo to the map -------//
+		var imageUrl = 'img/logo.svg';
+		var imageBounds = [[43.397331,-59.191303], [43.109271,-58.285365]];
+		var logo = L.imageOverlay(imageUrl, imageBounds);
+		logo.addTo(mymap);
+
+// -------- end add the logo to the map --------//
+
 //----------------------------------//
 //------- Add button icons ---------//
 //----------------------------------//
