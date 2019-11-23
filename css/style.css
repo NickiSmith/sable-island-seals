@@ -34,12 +34,18 @@ body {
 
 /*--- image styling below this line ---*/
 
-#sealPic1 {
-    border-radius: 10px;
+.carousel-inner {
+/*    border-radius: 10px;*/
+    margin-bottom: 20px;
+}
+
+#myCarousel {
+/*    border-radius: 10px;*/
 }
 
 .caption {
     font-size: 12px;
+    
 }
 
 /*--- end of image styling ---*/
@@ -56,7 +62,7 @@ body {
 /* locator map svg (inside locator div) */
 svg{
     background: white;
-    border-radius: 10px;
+/*    border-radius: 10px;*/
 } 
 
 /* locator map paths*/
@@ -71,19 +77,23 @@ svg{
 
 /* --- style seal paths ---*/
 .F104 {
-    stroke: #f2bfba;
+    stroke: #BFA3B2;
 }
 .F532 {
-    stroke: #a0d6b1;
+    stroke: #8BA5D9;
 }
 .K88 {
-    stroke: #efd3f5;
+    stroke: #7b9cba;
 }
 .S0749 {
-    stroke: #fff8b8;
+    stroke: #3f638a;
 }
 .S0758 {
-    stroke: #ffd5ab;
+    stroke: #F2C8C4;
+}
+
+.backgroundPaths {
+    stroke: black;
 }
 
 /*---- animation button styling --*/
@@ -98,8 +108,6 @@ svg{
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    
-
     }
 
 .buttonSVG {
@@ -107,6 +115,14 @@ svg{
     width: 80px;
     text-align: center;
     vertical-align: middle;
+}
+
+#allSeals{
+    width: 80px;
+    height: 80px;
+    background-color: #49556f;
+    color: white;
+    font-size: 16px;
 }
 
 .label {
@@ -143,7 +159,7 @@ svg{
 }
 
 .footer {
-    background: #303140;
+    background: #49556f;
     color: #f8f9fa;   
 }
 
@@ -186,11 +202,21 @@ svg{
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
 
-Color Palette
+Color Palette (original)
 Dark blue: #303140
 Medium blue: #49556f
 Dark brown: #454545
 Pink: #fcebe1
 lavender: #acacde
+
+Color Palette (modified here, source linked below)
+lavender: #BFA3B2;
+cornflower blue: #8BA5D9;
+grey blue: #7b9cba;
+dark blue: #3f638a;
+pink: #F2C8C4;
+
+https://color.adobe.com/search?q=ice%20sea&page=3
+https://stock.adobe.com/50744246/
 
 */-----------------------------------------
