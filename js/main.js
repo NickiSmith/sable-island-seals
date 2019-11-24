@@ -145,8 +145,6 @@ var loadData = d3.json(sealData, function(error, collection) {
         .attr("stroke-dashoffset", 0)
         //.style("opacity", "1");
         
-        d3.select(".F104").style("opacity", "0");
-        
     })
     
     //--- seal#2 F532 ---//
