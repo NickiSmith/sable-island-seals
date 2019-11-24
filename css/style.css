@@ -4,18 +4,13 @@
     Final Project - Sable Island Seals
 */
 
-/* global variable for font; syntax for use in css is var(--font);*/
-:root {
-    --font: 'Open Sans Condensed', sans-serif;
-}
-
 /* global variable for text color; syntax for use in css is var(--textColor*/
 :root {
-    --textColor: #454545;
+    --textColor: #49556f;
 }
 
 body {
-    font-family: var(--font);
+    font-family: 'Open Sans Condensed', sans-serif;
     background-color: #f8f9fa;
 }
 
@@ -43,9 +38,11 @@ body {
 /*    border-radius: 10px;*/
 }
 
-.caption {
-    font-size: 12px;
-    
+.carousel-indicators li {
+width: 10px;
+height: 10px;
+border-radius: 100%;
+border: none;
 }
 
 /*--- end of image styling ---*/
@@ -132,6 +129,12 @@ svg{
     fill: black;
 }
 
+#buttonHeader {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #49556f;
+}
+
 /*--- end of locator styling ---*/
 
 /* leaflet overlay pane */
@@ -179,7 +182,7 @@ svg{
 .aside-2 {
   background: #f8f9fa;
   /* set width appropriate for buttons on the right */
-  max-width: 200px;
+  max-width: 150px;
 }
 
 @media all and (min-width: 600px) {
