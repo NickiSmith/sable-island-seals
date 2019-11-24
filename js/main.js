@@ -328,6 +328,17 @@ window.onload = setMap();
                 .attr("fill", "#8BA5D9")
                 .attr("stroke", "#49556f");
             
+            
+            
+            function onMapClick(e) {
+                popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(locatorMap);
+            }
+
+            locatorMap.on('click', onMapClick);
+            
         } //end of the callback() function
     } //end of setMap()
 //-------- end of locator map script -------//
