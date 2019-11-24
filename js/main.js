@@ -54,9 +54,9 @@ var spotterOverlay = {
 // ------- add basemaps and spotter overlay layers to map and layer control ----------- //
 L.control.layers(basemaps, spotterOverlay).addTo(mymap);
 
-//-----------------------------------------
-//--- leaflet overlay pane script below ---
-//-----------------------------------------
+//-----------------------------------------//
+//--- leaflet overlay pane script below ---//
+//-----------------------------------------//
 
 //create overlay pane
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
@@ -115,8 +115,6 @@ var loadData = d3.json(sealData, function(error, collection) {
 
     //----- line animation adapted from http://bl.ocks.org/fryford/2925ecf70ac9d9b51031 -----//
     //---- animate paths on click -------//
-    
-//Still working on how best to visualize these paths
     
     //--- seal#1 F104 ---//
     d3.select("#seal1").on("click", function(d, i) {
@@ -365,17 +363,9 @@ mymap.on('click', onMapClick);
     $("#seal4").html("<img class='buttonIMG' src='img/seal4.png'>");
     $("#seal5").html("<img class='buttonIMG' src='img/seal5.png'>");
 
-
-//----------------------------------//
-//Slideshow
-//----------------------------------//
-
-
-
-
-//-----------------------------------------------
-/*---------------- Resources --------------------
-//-----------------------------------------------
+//-----------------------------------------------//
+/*---------------- Resources --------------------//
+//-----------------------------------------------//
 
 https://gis.stackexchange.com/questions/34769/how-can-i-render-latitude-longitude-coordinates-on-a-map-with-d3
 
