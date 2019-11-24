@@ -17,9 +17,16 @@ Lidgard DC, Bowen WD, Iverson SJ (2015) Data from: A novel approach to quantifyi
 
 -----------------------------------------------
 
-National Park Boundary Data
+2) National Park Boundary Data; Accessed November 2019
 https://open.canada.ca/data/en/dataset?organization=pc&res_format=SHP
 
 Organization Name:
 Government of Canada; Natural Resources Canada; Earth Sciences Sector; Canada Centre for Mapping and Earth Observation
 https://open.canada.ca/en/open-government-licence-canada
+
+
+------------------------------------------------
+2) Locator map source
+Natural Earth 1:110m Physical Vector Coastline
+Downloaded from: https://www.naturalearthdata.com/downloads/110m-physical-vectors/
+Accessed November 2019

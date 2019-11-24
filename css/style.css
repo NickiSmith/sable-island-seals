@@ -132,6 +132,12 @@ svg{
     fill: black;
 }
 
+#buttonHeader {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #49556f;
+}
+
 /*--- end of locator styling ---*/
 
 /* leaflet overlay pane */
