@@ -350,7 +350,7 @@ mymap.on('click', onMapClick);
 
 
 // -------- add logo to the map -------//
-		var imageUrl = 'img/logo.svg';
+		var imageUrl = 'img/logo3.svg';
 		var imageBounds = [[43.397331,-59.191303], [43.109271,-58.285365]];
 		var logo = L.imageOverlay(imageUrl, imageBounds);
 		logo.addTo(mymap);
