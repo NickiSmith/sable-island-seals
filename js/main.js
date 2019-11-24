@@ -128,6 +128,9 @@ var loadData = d3.json(sealData, function(error, collection) {
         
         // Determine the total length of the line 
         var totalLength =   d3.select(".F104").node().getTotalLength();
+        
+        //might be able to use this to fix starting and ending point of animation?
+        //length = totalLength + "100";
     
         d3.select(".F104")
         // Set the line pattern to be a line followed by a gap
@@ -141,6 +144,9 @@ var loadData = d3.json(sealData, function(error, collection) {
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0)
         //.style("opacity", "1");
+        
+        d3.select(".F104").style("opacity", "0");
+        
     })
     
     //--- seal#2 F532 ---//
@@ -355,11 +361,11 @@ mymap.on('click', onMapClick);
 //------- Add button icons ---------//
 //----------------------------------//
 
-    $("#seal1").html("<img class='buttonSVG' src='img/seal1.svg'>");
-    $("#seal2").html("<img class='buttonSVG' src='img/seal2.svg'>");
-    $("#seal3").html("<img class='buttonSVG' src='img/seal3.svg'>");
-    $("#seal4").html("<img class='buttonSVG' src='img/seal4.svg'>");
-    $("#seal5").html("<img class='buttonSVG' src='img/seal5.svg'>");
+    $("#seal1").html("<img class='buttonIMG' src='img/seal1.png'>");
+    $("#seal2").html("<img class='buttonIMG' src='img/seal2.png'>");
+    $("#seal3").html("<img class='buttonIMG' src='img/seal3.png'>");
+    $("#seal4").html("<img class='buttonIMG' src='img/seal4.png'>");
+    $("#seal5").html("<img class='buttonIMG' src='img/seal5.png'>");
 
 
 //----------------------------------//

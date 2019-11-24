@@ -77,7 +77,7 @@ svg{
 
 /* --- style seal paths ---*/
 .F104 {
-    stroke: #BFA3B2;
+    stroke: #F2C8C4;
 }
 .F532 {
     stroke: #8BA5D9;
@@ -89,7 +89,7 @@ svg{
     stroke: #3f638a;
 }
 .S0758 {
-    stroke: #F2C8C4;
+    stroke: #BFA3B2;
 }
 
 .backgroundPaths {
@@ -101,16 +101,17 @@ svg{
     border-radius: 50%;
     background-color: none;
     display: block;
-/*    height: 80px;*/
-/*    width: 80px;*/
+    height: 80px;
+    width: 80px;
     padding: 0 0;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    border: none;
     }
 
-.buttonSVG {
+.buttonIMG {
     height:80px;
     width: 80px;
     text-align: center;
@@ -120,9 +121,9 @@ svg{
 #allSeals{
     width: 80px;
     height: 80px;
-    background-color: #49556f;
+    background-color: #8A7E98;
     color: white;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .label {
