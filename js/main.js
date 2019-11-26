@@ -8,18 +8,18 @@
 //------------------------------//
 
 
-var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+/*var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 17
-})
+})*/
 
 // -- custom tileset with seal data baked in --//
 // -- possibly needs to be fixed on the tileset publishing side --//
-/*var stylized = L.esri.tiledMapLayer({
-  url: 'https://uw-mad.maps.arcgis.com/home/item.html?id=d4b7706885a84a0ca90c8ebdbbae5bf9#overview',
+var stylized = L.esri.tiledMapLayer({
+  url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/greyseals_tiles/MapServer',
   maxZoom: 15
-});*/
+});
 
 var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -354,8 +354,6 @@ mymap.on('click', onMapClick);
 
 //---------end locator tool -----------//
 
-
-
 // -------- add logo to the map -------//
 		var imageUrl = 'img/logo3.svg';
 		var imageBounds = [[43.397331,-59.191303], [43.109271,-58.285365]];
@@ -375,6 +373,17 @@ mymap.on('click', onMapClick);
     $("#seal5").html("<img class='buttonIMG' src='img/seal5.png'>");
 
 //-----------------------------------------------//
+
+ //----------- easy button ----------------------//
+
+var htmlStar = L.map('html-star', {scrollWheelZoom: false}).setView([37.8, -96], 4);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(htmlStar);
+
+L.easyButton( '<span class="star">&starf;</span>', function(){
+  alert('you just clicked the html entity \&starf;');
+}).addTo(htmlStar);
+
+// --------------end of easy button --------------//
 /*---------------- Resources --------------------//
 //-----------------------------------------------//
 
