@@ -14,12 +14,6 @@ var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyage
 	maxZoom: 17
 })
 
-// -- custom tileset with seal data baked in --//
-// -- possibly needs to be fixed on the tileset publishing side --//
-var sealtiles = L.esri.tiledMapLayer({
-  url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/greyseals_tiles/MapServer',
-  maxZoom: 15
-});
 
 var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -29,13 +23,12 @@ var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/
 var mymap = L.map('mapid', {
     center: [44.1, -60.5],
     zoom: 7.5,
-    layers: [imagery, stylized, sealtiles]
+    layers: [imagery, stylized]
 });
 
 var basemaps = {
     "Imagery": imagery,
-    "Stylized": stylized,
-    "Seal Locations": sealtiles
+    "Stylized": stylized
     
 };
 
@@ -48,8 +41,16 @@ var spot1=L.marker([44.01598,-59.699775]).bindPopup('You found seals!'),
 // -- create layer group and overlay for seal markers -- //
 var sealSpots = L.layerGroup([spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9]);
 
+// -- custom tileset with seal data baked in --//
+// -- possibly needs to be fixed on the tileset publishing side --//
+var sealtiles = L.esri.tiledMapLayer({
+  url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/greyseals_tiles/MapServer',
+  maxZoom: 15
+}).addTo(mymap);
+
 var spotterOverlay = {
-    "Seal Spotter": sealSpots
+    "Seal Spotter": sealSpots,
+    "Seal Paths": sealtiles
 }
 
 // ------- add basemaps and spotter overlay layers to map and layer control ----------- //
