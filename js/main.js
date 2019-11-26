@@ -8,15 +8,15 @@
 //------------------------------//
 
 
-/*var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 17
-})*/
+})
 
 // -- custom tileset with seal data baked in --//
 // -- possibly needs to be fixed on the tileset publishing side --//
-var stylized = L.esri.tiledMapLayer({
+var sealtiles = L.esri.tiledMapLayer({
   url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/greyseals_tiles/MapServer',
   maxZoom: 15
 });
@@ -29,12 +29,13 @@ var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/
 var mymap = L.map('mapid', {
     center: [44.1, -60.5],
     zoom: 7.5,
-    layers: [imagery, stylized]
+    layers: [imagery, stylized, sealtiles]
 });
 
 var basemaps = {
     "Imagery": imagery,
-    "Stylized": stylized
+    "Stylized": stylized,
+    "Seal Locations": sealtiles
     
 };
 
