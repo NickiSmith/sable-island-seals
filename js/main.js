@@ -7,13 +7,11 @@
 //----- create leaflet map -----//
 //------------------------------//
 
-
 var stylized = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 17
 })
-
 
 var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -32,29 +30,43 @@ var basemaps = {
     
 };
 
-//----- create seal markers ------ //
-//-- this could be updated to load from csv if we choose --//
-var spot1=L.marker([44.01598,-59.699775]).bindPopup('You found seals!'),
-    spot2=L.marker([44.005652,-59.717613]).bindPopup('You found seals!'),
-    spot3=L.marker([43.981472,-59.753418]).bindPopup('You found seals!'), spot4=L.marker([43.979207,-59.753689]).bindPopup('You found seals!'), spot5=L.marker([43.935239,-60.063347]).bindPopup('You found seals!'), spot6=L.marker([43.935989,-60.049944]).bindPopup('You found seals!'), spot7=L.marker([43.955967,-59.804487]).bindPopup('You found seals!'), spot8=L.marker([43.973698,-59.765904]).bindPopup('You found seals!'), spot9=L.marker([43.977625,-59.759687]).bindPopup('You found seals!');
-
-// -- create layer group and overlay for seal markers -- //
-var sealSpots = L.layerGroup([spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9]);
-
-// -- custom tileset with seal data baked in --//
-// -- possibly needs to be fixed on the tileset publishing side --//
+// ------ seal tileset ------//
 var sealtiles = L.esri.tiledMapLayer({
   url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/greyseals_tiles/MapServer',
   maxZoom: 15
 }).addTo(mymap);
 
+var sealIcon = L.icon({
+    iconUrl: 'img/seal-icon.png',
+    iconSize: [40, 30], // size of the icon
+});
+
+
+//----- create seal markers ------ //
+
+var spot1=L.marker([44.01598,-59.699775], {icon: sealIcon}).bindPopup('You found seals!'),
+    spot2=L.marker([44.005652,-59.717613], {icon: sealIcon}).bindPopup('You found seals!'),
+    spot3=L.marker([43.981472,-59.753418], {icon: sealIcon}).bindPopup('You found seals!'), spot4=L.marker([43.979207,-59.753689],{icon: sealIcon}).bindPopup('You found seals!'), spot5=L.marker([43.935239,-60.063347],{icon: sealIcon}).bindPopup('You found seals!'), spot6=L.marker([43.935989,-60.049944],{icon: sealIcon}).bindPopup('You found seals!'), spot7=L.marker([43.955967,-59.804487],{icon: sealIcon}).bindPopup('You found seals!'), spot8=L.marker([43.973698,-59.765904],{icon: sealIcon}).bindPopup('You found seals!'), spot9=L.marker([43.977625,-59.759687],{icon: sealIcon}).bindPopup('You found seals!');
+
+// -- create layer group and overlay for seal markers -- //
+var sealSpots = L.layerGroup([spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9]);
+
+// -- add basemaps and spotter overlay layers to map and layer control -- //
+
 var spotterOverlay = {
     "Seal Spotter": sealSpots,
     "Seal Paths": sealtiles
 }
-
-// ------- add basemaps and spotter overlay layers to map and layer control ----------- //
 L.control.layers(basemaps, spotterOverlay).addTo(mymap);
+
+ //----------- easy button -----------//
+
+var sealSpotterPopup = L.popup().setContent('Here are some instructions on how to play the seal spotter game!');
+
+L.easyButton( '<span class="star">&starf;</span>', function(btn, mymap){
+  sealSpotterPopup.setLatLng(mymap.getCenter()).openOn(mymap);
+}).addTo(mymap);
+
 
 //-----------------------------------------//
 //--- leaflet overlay pane script below ---//
@@ -138,9 +150,9 @@ var loadData = d3.json(sealData, function(error, collection) {
         // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
-        .style("stroke-width", "1")
+        .style("stroke-width", "2")
         .transition()
-        .duration(80000)
+        .duration(100000)
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0)
         //.style("opacity", "1");
@@ -166,6 +178,7 @@ var loadData = d3.json(sealData, function(error, collection) {
         // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
+        .style("stroke-width", "2")
         .transition()
         .duration(100000)
         .ease(d3.easeLinear)
@@ -190,6 +203,7 @@ var loadData = d3.json(sealData, function(error, collection) {
         // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
+        .style("stroke-width", "2")
         .transition()
         .duration(100000)
         .ease(d3.easeLinear)
@@ -214,6 +228,7 @@ var loadData = d3.json(sealData, function(error, collection) {
         // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
+        .style("stroke-width", "2")
         .transition()
         .duration(100000)
         .ease(d3.easeLinear)
@@ -238,6 +253,7 @@ var loadData = d3.json(sealData, function(error, collection) {
         // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
         .attr("stroke-dashoffset", totalLength)
         // Then the following lines transition the line so that the gap is hidden...
+        .style("stroke-width", "2")
         .transition()
         .duration(100000)
         .ease(d3.easeLinear)
@@ -313,7 +329,7 @@ window.onload = setMap();
             var point = [-59.914991, 43.926013]
             
             //create label for point
-            var label = "<p>"+ "Sable Island" + "</p>"
+            //var label = "<p>"+ "Sable Island" + "</p>"
 
             //add Sable Island marker to svg
             locatorMap.selectAll("circles.points")
@@ -375,17 +391,6 @@ mymap.on('click', onMapClick);
     $("#seal5").html("<img class='buttonIMG' src='img/seal5.png'>");
 
 //-----------------------------------------------//
-
- //----------- easy button ----------------------//
-
-var htmlStar = L.map('html-star', {scrollWheelZoom: false}).setView([37.8, -96], 4);
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(htmlStar);
-
-L.easyButton( '<span class="star">&starf;</span>', function(){
-  alert('you just clicked the html entity \&starf;');
-}).addTo(htmlStar);
-
-// --------------end of easy button --------------//
 /*---------------- Resources --------------------//
 //-----------------------------------------------//
 
@@ -404,6 +409,9 @@ https://bl.ocks.org/mbostock/5649592
 
 point-along-path
 https://bl.ocks.org/mbostock/1705868
+
+Easy button
+https://github.com/CliffCloud/Leaflet.EasyButton
 
 */
 

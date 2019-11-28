@@ -146,6 +146,10 @@ svg{
     opacity: 1;
 }
 
+.star{
+    font-size: 1.5em;
+}
+
 
 /* -----Everything below this line is CSS from Flex----- */
 
