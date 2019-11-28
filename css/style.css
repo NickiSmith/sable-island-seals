@@ -21,6 +21,10 @@ body {
     padding-left: 10px;
 }
 
+#title {
+    font-family: 'Satisfy', cursive;
+}
+
 /* leaflet map */
 #mapid { 
     height: 580px;
