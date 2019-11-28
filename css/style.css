@@ -45,6 +45,19 @@ body {
     margin-bottom: 20px;
 }
 
+/*-- styling for header in seal spotter pop-up --*/
+#spotterTitle {
+    color: #49556f;
+    font-family:'Satisfy', cursive;
+}
+
+/*-- styling for body in seal spotter pop-up --*/
+#spotterText {
+    color: #49556f;
+    font-family:'Open Sans Condensed';
+    font-size: 1.5em;
+}
+
 /*--- image styling below this line ---*/
 
 .carousel-inner {

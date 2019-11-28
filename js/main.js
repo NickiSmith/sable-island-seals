@@ -36,13 +36,13 @@ var sealtiles = L.esri.tiledMapLayer({
   maxZoom: 15
 }).addTo(mymap);
 
-var sealIcon = L.icon({
-    iconUrl: 'img/seal-icon.png',
-    iconSize: [40, 30], // size of the icon
-});
-
 
 //----- create seal markers ------ //
+
+var sealIcon = L.icon({
+    iconUrl: 'img/seal-icon.png',
+    iconSize: [50, 40], // size of the icon
+});
 
 var spot1=L.marker([44.01598,-59.699775], {icon: sealIcon}).bindPopup('You found seals!'),
     spot2=L.marker([44.005652,-59.717613], {icon: sealIcon}).bindPopup('You found seals!'),
@@ -55,15 +55,15 @@ var sealSpots = L.layerGroup([spot1, spot2, spot3, spot4, spot5, spot6, spot7, s
 
 var spotterOverlay = {
     "Seal Spotter": sealSpots,
-    "Seal Paths": sealtiles
+    "Seal Tracking": sealtiles
 }
 L.control.layers(basemaps, spotterOverlay).addTo(mymap);
 
  //----------- easy button -----------//
 
-var sealSpotterPopup = L.popup().setContent('Here are some instructions on how to play the seal spotter game!');
+var sealSpotterPopup = L.popup().setContent('<h1 id="spotterTitle"><strong>Welcome, Seal Spotters!  </strong><img src="img/seal-icon.png" height="40px" width="55px"></h1><br><p id="spotterText">Ready to play? Choose the imagery map using the layers button in the upper right, then explore the map to see how many seals you can find on the island.<br><br>Need a hint? Turn on the "Seal Spotter" layer using the same button and zoom in on the seal icons to see colonies basking on the sand.</p>');
 
-L.easyButton( '<img src="img/seal-icon.png" height="16px" width="22px">', function(btn, mymap){
+L.easyButton( '<img src="img/seal-icon.png" height="20px" width="20px">', function(btn, mymap){
   sealSpotterPopup.setLatLng(mymap.getCenter()).openOn(mymap);
 }).addTo(mymap);
 
@@ -74,10 +74,6 @@ L.easyButton( '<img src="img/seal-icon.png" height="16px" width="22px">', functi
 //create overlay pane
 var svgOver = d3.select(mymap.getPanes().overlayPane).append("svg"),
     g = svgOver.append("g").attr("class", "pane");
-
-//load park boundary polygon?
-//this might be unecessary because it's just the shape of the island...
-var parkData="data/NPboundary.geojson"
 
 //load geojson seal data for seal paths
 var sealData="data/allSeals.geojson";
