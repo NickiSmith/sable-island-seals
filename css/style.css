@@ -38,6 +38,12 @@ body {
     color: #8BA5D9;
 }
 
+#caption {
+    height: 70px;
+    color: #49556f;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
 
 /*--- image styling below this line ---*/
 
@@ -64,8 +70,8 @@ border: none;
 
 /* locator div */
 #locator {
-  width: auto;
-  height: 250px;
+    width: auto;
+    height: 250px;
 }
 
 /* locator map svg (inside locator div) */

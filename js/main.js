@@ -63,10 +63,9 @@ L.control.layers(basemaps, spotterOverlay).addTo(mymap);
 
 var sealSpotterPopup = L.popup().setContent('Here are some instructions on how to play the seal spotter game!');
 
-L.easyButton( '<span class="star">&starf;</span>', function(btn, mymap){
+L.easyButton( '<img src="img/seal-icon.png" height="16px" width="22px">', function(btn, mymap){
   sealSpotterPopup.setLatLng(mymap.getCenter()).openOn(mymap);
 }).addTo(mymap);
-
 
 //-----------------------------------------//
 //--- leaflet overlay pane script below ---//
