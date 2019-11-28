@@ -30,6 +30,14 @@ body {
     height: 580px;
 }
 
+.footer {
+    font-size: 1.5em;
+}
+
+#sableLink {
+    color: #8BA5D9;
+}
+
 
 /*--- image styling below this line ---*/
 
