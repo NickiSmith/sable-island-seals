@@ -39,7 +39,7 @@
         
         <div id="header" class="jumbotron">
             <h1 id="title"><strong>Sable Island Seals</strong></h1>
-            <p>Sable Island in Newfoundland Canada is a National Park Reserve off the coast of Nova Scotia. This twelve mile crescent, isolated in the Atlantic, is known for its incredible wildlife. The world's largest grey seal breeding colony, some 400,000 strong, flourish on this remote island home. In June of 2011, scientists tagged a handful of Sable Island seals with GPS devices and tracked their movement for six months in intimate detail. Explore the map to see how five of these seals interact with the island and surrounding sea.</p>
+            <p>Sable Island in Newfoundland Canada is a National Park Reserve off the coast of Nova Scotia. This twelve mile long crescent, isolated in the Atlantic, is known for its incredible wildlife. The world's largest grey seal breeding colony, some 400,000 strong, flourish on this remote island home. In June of 2011, scientists tagged a handful of Sable Island seals with GPS devices and tracked their movement for six months in intimate detail. Explore the map to see how five of these seals interact with the island and surrounding sea.</p>
         </div>
 
         <!--   this is our map div!     -->
@@ -89,7 +89,7 @@
                 </div>
                 
                 <!-- div between img carousel and locator map -->
-                <div id="caption">
+                <div class="caption">
                     <p>How many seals can you find in the map? Click the seal button in the map for instructions on how to play the seal spotter game!</p>
                 </div>
                 
@@ -100,7 +100,12 @@
             
             <!--     div for buttons       -->
             <aside class="aside aside-2">
-                <h1 id="buttonHeader"><strong>Click to see each seal's journey!</strong></h1>
+                <div class="dropdown">
+                <span id="buttonHeader"><strong>Click to see each seal's journey!</strong></span>
+                    <div class="dropdown-content">
+                    <p class="caption">These animated paths follow the GPS locations collected for each of five seals from June through December of 2011. Toggle on and off the "Seal Tracking" layer in the layers button on the map to compare their paths with the other seals in the study!</p>
+                    </div>
+                </div>
                 <button type="button" class="animate" id="seal1"></button>
                 <button type="button" class="animate" id="seal2"></button>
                 <button type="button" class="animate" id="seal3"></button>
