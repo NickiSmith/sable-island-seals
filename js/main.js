@@ -369,7 +369,7 @@ mymap.on('click', onMapClick);
 
 // -------- add logo to the map -------//
 		var imageUrl = 'img/logo3.svg';
-		var imageBounds = [[43.551823,-58.061022], [43.13635,-57.19788]];
+		var imageBounds = [[43.551823,-58.203021], [43.13635,-57.539005]];
 		var logo = L.imageOverlay(imageUrl, imageBounds);
 		logo.addTo(mymap);
 
@@ -378,7 +378,7 @@ mymap.on('click', onMapClick);
 
 // -------- add legend to the map -------//
 		var imageUrl = 'img/legend2.svg';
-		var imageBounds = [[43.551823, -63.858564], [43.13635,-62.479165]];
+		var imageBounds = [[43.551823, -63.485459], [43.13635,-62.327289]];
 		var legend = L.imageOverlay(imageUrl, imageBounds);
 		legend.addTo(mymap);
 

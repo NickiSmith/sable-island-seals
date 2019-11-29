@@ -63,7 +63,14 @@ body {
 }
 
 .caption {
-    height: 70px;
+    height: 50px;
+    color: #49556f;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.caption2 {
+    height: 50px;
     color: #49556f;
     font-size: 1.6em;
     margin-bottom: 20px;
@@ -152,7 +159,7 @@ svg{
 
 /* --- style seal paths ---*/
 .F104 {
-    stroke: #F2C8C4;
+    stroke: #ff08e8;
 }
 .F532 {
     stroke: #8BA5D9;
@@ -167,6 +174,25 @@ svg{
     stroke: #BFA3B2;
 }
 
+/* --- style seal paths original ---*/
+/* --- 
+
+.F104 {
+    stroke: #F2C8C4;
+}
+.F532 {
+    stroke: #8BA5D9;
+}
+.K88 {
+    stroke: #7b9cba;
+}
+.S0749 {
+    stroke: #3f638a;
+}
+.S0758 {
+    stroke: #BFA3B2;
+}
+---*/
 .backgroundPaths {
     stroke: black;
 }
