@@ -41,7 +41,7 @@ var sealtiles = L.esri.tiledMapLayer({
 
 var sealIcon = L.icon({
     iconUrl: 'img/seal-icon.png',
-    iconSize: [50, 40], // size of the icon
+    iconSize: [40, 40], // size of the icon
 });
 
 var spot1=L.marker([44.01598,-59.699775], {icon: sealIcon}).bindPopup('You found seals!'),
@@ -63,7 +63,7 @@ L.control.layers(basemaps, spotterOverlay).addTo(mymap);
 
 var sealSpotterPopup = L.popup().setContent('<h1 id="spotterTitle"><strong>Welcome, Seal Spotters!  </strong><img src="img/seal-icon.png" height="40px" width="55px"></h1><br><p id="spotterText">Ready to play? Choose the imagery map using the layers button in the upper right, then explore the map to see how many seals you can find on the island.<br><br>Need a hint? Turn on the "Seal Spotter" layer using the same button and zoom in on the seal icons to see colonies basking on the sand.</p>');
 
-L.easyButton( '<img src="img/seal-icon.png" height="20px" width="20px">', function(btn, mymap){
+L.easyButton( '<img src="img/seal-icon.png" height="25px" width="23px">', function(btn, mymap){
   sealSpotterPopup.setLatLng(mymap.getCenter()).openOn(mymap);
 }).addTo(mymap);
 
