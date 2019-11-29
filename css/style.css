@@ -21,11 +21,65 @@ body {
     padding-left: 10px;
 }
 
+#title {
+    font-family: 'Satisfy', cursive;
+}
+
 /* leaflet map */
 #mapid { 
     height: 580px;
 }
 
+.footer {
+    font-size: 1.5em;
+}
+
+#sableLink {
+    color: #8BA5D9;
+}
+
+.caption {
+    height: 70px;
+    color: #49556f;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+/*-- styling for header in seal spotter pop-up --*/
+#spotterTitle {
+    color: #49556f;
+    font-family:'Satisfy', cursive;
+}
+
+/*-- styling for body in seal spotter pop-up --*/
+#spotterText {
+    color: #49556f;
+    font-family:'Open Sans Condensed';
+    font-size: 1.5em;
+}
+
+/*--  dropdown for seal path info --*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  height: 450px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*-- end of dropdown styling --*/
 
 /*--- image styling below this line ---*/
 
@@ -52,8 +106,8 @@ border: none;
 
 /* locator div */
 #locator {
-  width: auto;
-  height: 250px;
+    width: auto;
+    height: 250px;
 }
 
 /* locator map svg (inside locator div) */
@@ -101,7 +155,8 @@ svg{
     height: 80px;
     width: 80px;
     padding: 0 0;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    margin-top: 8px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -145,6 +200,10 @@ svg{
     stroke-width: 1.0px;
     opacity: 1;
 }
+
+/*.star{
+    font-size: 1.5em;
+}*/
 
 
 /* -----Everything below this line is CSS from Flex----- */

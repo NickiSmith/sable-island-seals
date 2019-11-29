@@ -5,8 +5,11 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Sable Island Seals</title>
         
-        <!--   Google font API (update to chosen font)     -->
+        <!--   Google font API (body) -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        
+        <!--   Google font API (title) -->
+        <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 
         <!----------------------->
         <!----- Stylesheets ----->
@@ -23,14 +26,7 @@
         
         <!--   main style sheet     -->
 		<link rel="stylesheet" href="css/style.css">
-        
-          <!--   easy button refrence     -->
-        \
-		
-        <!--[if IE<9]>
-			<link rel="stylesheet" href="css/style.ie.css">
-		<![endif]-->
-        
+    
 	</head>
 
 	<body>
@@ -42,9 +38,9 @@
         <!--   Header   -->
         
         <div id="header" class="jumbotron">
-            <h1><strong>Sable Island Seals</strong></h1>
-            <p>Sable Island in Newfoundland Canada is a National Park Reserve off the coast of Nova Scotia. It is approximatly 12 miles long and is known for its incredible wild life.  It is home to 500 wildhorses and 400,000 Grey Seals use it as a hub. Being so remote has allowed these animals to flourish. This page allows you to see how a hand full of seals interact with the island and surrounding area. 
-            </p>
+
+            <h1 id="title"><strong>Sable Island Seals</strong></h1>
+            <p>Sable Island in Newfoundland Canada is a National Park Reserve off the coast of Nova Scotia. This twelve mile long crescent, isolated in the Atlantic, is known for its incredible wildlife from wild horses to birds and uniquely adapted insects. The world's largest grey seal breeding colony, some 400,000 strong, flourish on this remote island home. In June of 2011, scientists tagged a handful of Sable Island seals with GPS devices and tracked their movement for six months in intimate detail. Explore the map to see how five of these seals interact with the island and surrounding sea.</p>
         </div>
 
         <!--   this is our map div!     -->
@@ -92,14 +88,25 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-
+                
+                <!-- div between img carousel and locator map -->
+                <div class="caption">
+                    <p>How many seals can you find in the map? Click the seal button in the map for instructions on how to play the seal spotter game!</p>
+                </div>
+                
+                
                 <!--     div for locator map       -->
                 <div id="locator"></div>
             </aside>
             
             <!--     div for buttons       -->
             <aside class="aside aside-2">
-                <h1 id="buttonHeader"><strong>Click to see each seal's journey!</strong></h1>
+                <div class="dropdown">
+                <span id="buttonHeader"><strong>Click to see each seal's journey!</strong></span>
+                    <div class="dropdown-content">
+                    <p class="caption">These animated paths follow the GPS locations collected for each of five seals from June through December of 2011. Toggle on and off the "Seal Tracking" layer in the layers button on the map to compare their paths with the other seals in the study!</p>
+                    </div>
+                </div>
                 <button type="button" class="animate" id="seal1"></button>
                 <button type="button" class="animate" id="seal2"></button>
                 <button type="button" class="animate" id="seal3"></button>
@@ -109,7 +116,7 @@
             </aside>
             
             <!--     Footer       -->
-            <footer class="footer">Created by Laura Smith and Nicki Smith<br>Data sources | movebank.org, source 2<br>To learn more about Sable Island visit their national park webpage at: https://www.pc.gc.ca/en/pn-np/ns/sable</footer>
+            <footer class="footer">Created by Laura Smith and Nicki Smith<br>Data sources | source 1, source 2<br>Learn more about <a id="sableLink" href=https://www.pc.gc.ca/en/pn-np/ns/sable> Sable Island National Park</a></footer>
             
         </div>
         
@@ -119,6 +126,9 @@
         
         <!--    Leaflet JS     -->
         <script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
         
         <!--  Esri Leaflet      -->
         <script src="https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js" integrity="sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ==" crossorigin=""></script>
