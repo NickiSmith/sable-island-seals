@@ -30,36 +30,18 @@ body {
     height: 580px;
 }
 
-.footer {
-    font-size: 1.5em;
-}
-
-#sableLink {
+.link {
     color: #8BA5D9;
 }
 
-#moveBank {
-    color: #8BA5D9;
+/* visited link */
+.link:visited {
+  color: #8BA5D9;
 }
 
-#yurasits {
-    color: #8BA5D9;
-}
-
-#parkhouse {
-    color: #8BA5D9;
-}
-
-#laura {
-    color: #8BA5D9;
-}
-
-#nicki {
-    color: #8BA5D9;
-}
-
-#studyData {
-    color: #8BA5D9;
+/* mouse over link */
+.link:hover {
+  color: #F2C8C4;
 }
 
 .caption {
@@ -72,8 +54,13 @@ body {
 .caption2 {
     height: 50px;
     color: #49556f;
-    font-size: 1.6em;
-    margin-bottom: 20px;
+    font-size: 12px;
+    margin-top: 6px;
+    margin-bottom: auto;
+}
+
+#authors {
+    font-size: 1.5em;
 }
 
 /*-- styling for header in seal spotter pop-up --*/
@@ -144,7 +131,6 @@ border: none;
 /* locator map svg (inside locator div) */
 svg{
     background: white;
-/*    border-radius: 10px;*/
 } 
 
 /* locator map paths*/
@@ -158,43 +144,31 @@ svg{
 
 
 /* --- style seal paths ---*/
-.F104 {
-    stroke: #ff08e8;
-}
-.F532 {
-    stroke: #ffcf09;
-}
-.K88 {
-    stroke: #01f9c6;
-}
-.S0749 {
-    stroke: #ff3503;
-}
-.S0758 {
-    stroke: #ff9933;
-}
-
-/* --- style seal paths original ---*/
-/* --- 
 
 .F104 {
     stroke: #F2C8C4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .F532 {
     stroke: #8BA5D9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .K88 {
     stroke: #7b9cba;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .S0749 {
     stroke: #3f638a;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .S0758 {
     stroke: #BFA3B2;
-}
----*/
-.backgroundPaths {
-    stroke: black;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /*---- animation button styling --*/
@@ -202,11 +176,11 @@ svg{
     border-radius: 50%;
     background-color: none;
     display: block;
-    height: 80px;
-    width: 80px;
+    height: 75px;
+    width: 75px;
     padding: 0 0;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 12px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -214,18 +188,31 @@ svg{
     }
 
 .buttonIMG {
-    height:80px;
-    width: 80px;
+    height:75px;
+    width: 75px;
     text-align: center;
     vertical-align: middle;
+    border-radius: 50%;
+}
+
+.buttonIMG:hover {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.7), 0 5px 3px 0 rgba(73, 85, 111, 0.8), 0 5px 3px 0 rgba(73, 85, 111, 0.1); 
 }
 
 #allSeals{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     background-color: #8A7E98;
     color: white;
     font-size: 22px;
+}
+
+#allSeals:hover {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.7), 0 5px 3px 0 rgba(73, 85, 111, 0.8), 0 5px 3px 0 rgba(73, 85, 111, 0.1); 
 }
 
 .label {
@@ -240,21 +227,13 @@ svg{
     color: #49556f;
 }
 
-/*--- end of locator styling ---*/
-
 /* leaflet overlay pane */
 .pane {
     background-color: none;
     fill: none;
-/*    stroke: #CC9999;*/
     stroke-width: 1.0px;
     opacity: 1;
 }
-
-/*.star{
-    font-size: 1.5em;
-}*/
-
 
 /* -----Everything below this line is CSS from Flex----- */
 
@@ -273,7 +252,8 @@ svg{
 
 .footer {
     background: #49556f;
-    color: #f8f9fa;   
+    color: #f8f9fa;
+    font-size: 1.5em;   
 }
 
 /* centered pane or to the left or right if single aside */
