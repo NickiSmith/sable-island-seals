@@ -4,10 +4,6 @@
     Final Project - Sable Island Seals
 */
 
-/* global variable for text color; syntax for use in css is var(--textColor*/
-:root {
-    --textColor: #49556f;
-}
 
 body {
     font-family: 'Open Sans Condensed', sans-serif;
