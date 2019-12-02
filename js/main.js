@@ -1,7 +1,8 @@
-/*  Laura Smith and Nicki Smith
-    GEOG 575 Fall 2019
-    Final Project - Sable Island Seals
-*/
+/*---------------------------------//
+Laura Smith and Nicki Smith
+GEOG 575 Fall 2019
+Final Project - Sable Island Seals
+//---------------------------------*/
 
 //------------------------------//
 //----- create leaflet map -----//
@@ -364,7 +365,7 @@ window.onload = setMap();
 
         //map frame dimensions
         var width = 250,
-            height = 250;
+            height = 225;
 
         //create new svg container for the map
         var locatorMap  = d3.select("#locator")
@@ -375,7 +376,7 @@ window.onload = setMap();
         
         //create projection
         var projection = d3.geoConicConformal()
-          .center([8, 55])
+          .center([8, 53.5])
           .rotate([90, 0, 0])
           .parallels([30, 30])
           .scale(200)
@@ -418,7 +419,7 @@ window.onload = setMap();
                 .attr("fill", "#8BA5D9")
                 .attr("stroke", "#49556f");
          
-            //Add tesxt label to locator map
+            //Add text label to locator map
             var text = locatorMap.selectAll("text")
                 .data(point)
                 .enter()
@@ -427,7 +428,7 @@ window.onload = setMap();
             //Add SVG Text Element Attributes
             var textLabels = text
                 .attr("x", 185)
-                .attr("y", 173)
+                .attr("y", 155)
                 .text(label)
                 .attr("font-family", "Open Sans Condensed")
                 .attr("font-size", "12px")

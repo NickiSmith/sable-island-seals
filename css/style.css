@@ -1,8 +1,9 @@
-/*  Style sheet for
-    Laura Smith and Nicki Smith
-    GEOG 575 Fall 2019
-    Final Project - Sable Island Seals
-*/
+/*-----------------------------------//
+Style sheet for
+Laura Smith and Nicki Smith
+GEOG 575 Fall 2019
+Final Project - Sable Island Seals
+//----------------------------------*/
 
 
 body {
@@ -21,27 +22,21 @@ body {
     font-family: 'Satisfy', cursive;
 }
 
-/* leaflet map */
-#mapid { 
-    height: 580px;
-}
-
+/*-- links --*/
 .link {
     color: #8BA5D9;
 }
 
-/* visited link */
 .link:visited {
   color: #8BA5D9;
 }
 
-/* mouse over link */
 .link:hover {
   color: #F2C8C4;
 }
 
 .caption {
-    height: 50px;
+    height: 70px;
     color: #49556f;
     font-size: 1.6em;
     margin-bottom: 20px;
@@ -59,13 +54,24 @@ body {
     font-size: 1.5em;
 }
 
-/*-- styling for header in seal spotter pop-up --*/
+/*-- leaflet map --*/
+#mapid { 
+    height: 580px;
+}
+
+.pane {
+    background-color: none;
+    fill: none;
+    stroke-width: 1.0px;
+    opacity: 1;
+}
+
+/*-- seal spotter pop-up --*/
 #spotterTitle {
     color: #49556f;
     font-family:'Satisfy', cursive;
 }
 
-/*-- styling for body in seal spotter pop-up --*/
 #spotterText {
     color: #49556f;
     font-family:'Open Sans Condensed';
@@ -93,17 +99,11 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/*-- end of dropdown styling --*/
 
-/*--- image styling below this line ---*/
+/*--- carousel styling ---*/
 
 .carousel-inner {
-/*    border-radius: 10px;*/
     margin-bottom: 20px;
-}
-
-#myCarousel {
-/*    border-radius: 10px;*/
 }
 
 .carousel-indicators li {
@@ -113,33 +113,23 @@ border-radius: 100%;
 border: none;
 }
 
-/*--- end of image styling ---*/
-
-
-/*--- locator map styling below this line ---*/
-
-/* locator div */
+/*-- locator div and svg map --*/
 #locator {
     width: auto;
-    height: 250px;
+    height: 225px;
 }
 
-/* locator map svg (inside locator div) */
 svg{
     background: white;
 } 
 
-/* locator map paths*/
 .coasts {
    fill: #D7D7D7;
    stroke: aliceblue;    
    stroke-width: 2px;
 }
 
-/*--- end of locator styling ---*/
-
-
-/* --- style seal paths ---*/
+/* --- seal paths ---*/
 
 .F104 {
     stroke: #F2C8C4;
@@ -168,6 +158,7 @@ svg{
 }
 
 /*---- animation button styling --*/
+
 .animate {
     border-radius: 50%;
     background-color: none;
@@ -211,28 +202,14 @@ svg{
     box-shadow: 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.7), 0 5px 3px 0 rgba(73, 85, 111, 0.8), 0 5px 3px 0 rgba(73, 85, 111, 0.1); 
 }
 
-.label {
-    width: 20px;
-    height: 10px;
-    fill: black;
-}
-
 #buttonHeader {
     font-size: 2em;
     margin-bottom: 15px;
     color: #49556f;
 }
 
-/* leaflet overlay pane */
-.pane {
-    background-color: none;
-    fill: none;
-    stroke-width: 1.0px;
-    opacity: 1;
-}
 
-/* -----Everything below this line is CSS from Flex----- */
-
+/* ----- CSS from Flex----- */
 
 .wrapper {
   display: flex;  
@@ -266,7 +243,6 @@ svg{
 /* places an aside on the right */
 .aside-2 {
   background: #f8f9fa;
-  /* set width appropriate for buttons on the right */
   max-width: 150px;
 }
 
@@ -282,28 +258,19 @@ svg{
   .footer  { order: 4; }
 }
 
-/*--- end of Flex ---*/
-
 
 /*-----------------------------------------
-
 *Resources*
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
 
-Color Palette (original)
-Dark blue: #303140
-Medium blue: #49556f
-Dark brown: #454545
-Pink: #fcebe1
-Lavender: #acacde
-
-Color Palette (modified here, source linked below)
+Color Palette
 lavender: #BFA3B2;
 cornflower blue: #8BA5D9;
 grey blue: #7b9cba;
 dark blue: #3f638a;
 pink: #F2C8C4;
+Medium blue: #49556f
 
 https://color.adobe.com/search?q=ice%20sea&page=3
 https://stock.adobe.com/50744246/
